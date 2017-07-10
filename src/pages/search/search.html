@@ -6,13 +6,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="status">
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"></ion-searchbar>
 
-  <ion-card>
-    
-    <ion-item>
-        <ion-input type="search" placeholder="Search"></ion-input>
-    </ion-item>
-  </ion-card>
-
+      <ion-list>
+          <ion-item *ngFor="let item of items">
+              {{item.title}}
+          </ion-item>
+      </ion-list>
 </ion-content>
